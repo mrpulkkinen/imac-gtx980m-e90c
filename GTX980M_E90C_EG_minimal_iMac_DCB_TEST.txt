@@ -1,0 +1,18 @@
+EXPERIMENTAL GTX 980M E90C iMac display-table test ROM
+=====================================================
+Original E90C SHA256: fecaedfbafeed0a2f419e4c6138f4d2d410d25ec9a8bcf67ea835420c815d925
+R1_EG SHA256:        4d329cc6c18c9b8820d9567fc828866d7974dd0cba0640d71c607449f0329044
+Candidate SHA256:    b497defdd5fa5d5f0c4a1db098ec576ad3ca155b9cca0fdd1094d8a8de5b459b
+Candidate size:      199680 bytes
+
+Construction:
+- Base: original MSI E90C ROM
+- EnableGop: exact component from R1_EG inserted at 0x1B200
+- DCB 4.1 device entries 0x5F8C-0x600B copied from R1_EG
+- Connector entries 0x612C-0x616B copied from R1_EG
+- Connector platform byte 0x612B kept at original E90C value 0x09 (MXM)
+- Power/clock/memory-related R1 differences NOT transplanted
+- Legacy-region additive sum preserved via compensation byte at 0x101FF
+
+This is experimental firmware. Keep the verified original and known-good
+E90C+EnableGop ROM available for recovery.
